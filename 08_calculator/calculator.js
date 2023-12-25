@@ -1,30 +1,31 @@
-const add = function(summand1, summand2) {
-	return summand1+summand2;
+const add = function(a, b) {
+	return a + b;
 };
 
-const subtract = function(reduced, deductible) {
-	return reduced - deductible;
+const subtract = function(a, b) {
+	return a - b;
 };
 
-const sum = function(array) {
-	return array.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+const sum = function(arr) {
+	return arr.reduce((sum, value) => (sum + value), 0)
 };
 
-const multiply = function(array) {
-return array.reduce((accumulator, currentValue) => accumulator * currentValue);
+const multiply = function(arr) {
+	return arr.reduce((p, value) => (p * value), 1)
 };
 
-const power = function(value, powNum) { //(2, 3) = 8
-  return Math.pow(value, powNum);
+const power = function(value, degree) {
+	return Math.pow(value, degree);
 };
 
-const factorial = function(value) { //(4) = 1*2*3*4
-	if (value === 0) return 1;
-  let result = 1;
-  for (let i = 1; i <= value; i++) {
-    result = result * i;
+const factorial = function(value) {
+  if (value === 0 || value === 1) { return 1;}
+    let arr = [];
+    for(let i = 1; i <= value; i++) {
+    arr.push(i);
   }
-  return result;
+  let res = arr.reduce((fact, element) => fact * element, 1)
+  return res;
 };
 
 // Do not edit below this line
